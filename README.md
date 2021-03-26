@@ -1,74 +1,81 @@
+# Inatalando - Go, GRPC y Protocol Buffer
 
-```
-\______ \   _____/  |\_   _____/|__|  |   ____   ______
- |    |  \ /  _ \   __\    __)  |  |  | _/ __ \ /  ___/
- |    `   (  <_> )  | |     \   |  |  |_\  ___/ \___ \ 
-/_______  /\____/|__| \___  /   |__|____/\___  >____  >
-        \/                \/                 \/     \/
-```
-
-# Simple Dotfiles
-Create this simple dotfiles to be use on linux.
 **Tested** On:
     1. Ubuntu 18.04 
     2. Ubuntu 20.04 
 
-## Installation
-#### Install Git
-##### On a Debian-based distribution, such as Ubuntu, try apt:
+## Instalación
+#### Instalar git
+
 ```
 sudo apt update 
 sudo apt install git -y
 ```
 
-#### Run the following lines(Make)
+#### Ejecute las siguientes líneas 
+```sh
+git clone https://github.com/amb1s1/grpc-proto-buffer-install.git ~/
+cd ~/grpc-proto-buffer-install
 ```
-git clone https://github.com/amb1s1/simple-dotfiles.git ~/ ; cd ~/simple-dotfiles
-./install.sh
+
+##### Installar go
+```sh
+./go_install.sh
 ```
 
-This will modifY:
-1. vimrc
-2. tmux
-3. base16
+#### Pegue esto en el shell o edite su archivo bashrc
+##### Go y gRPC necesitan estos paths
+```
+export GOPATH=$HOME/gocode
+export PATH=/usr/local/go/bin:$HOME/grpc/bins/opt/:$HOME/bin:/usr/local/bin:$GOPATH/bin:$PATH
+```
+#### Ejecute las siguientes líneas 
+##### Installar grpc y protoc
 
-If you want to change your terminal them type:
+```
+./grpc_proto_install.sh
+```
 
-`base16` and then tab to see all the available teams.
+### Prueba tu instalación
+#### Obtén el código de ejemplo
+*El código de ejemplo es parte del repositorio grpc-go.*
 
+##### Descargue el repositorio como un archivo zip y descomprímalo, o clone el repositorio:
 
-This will change your theme in the terminal and vim.
+```sh
+git clone -b v1.35.0 https://github.com/grpc/grpc-go ~/
+```
 
-If you see a `VIM` error not finding a THEME, do the following:
+##### Cambiar al directorio de ejemplo de inicio rápido
 
-1. Open VIM (no need to specify a file name)
-2. type `shift+:` and type `PluginUpdate` enter
+```
+cd ~/grpc-go/examples/helloworld
+```
 
-### Test your install 
-#### Get the example code
-The example code is part of the grpc-go repo.
+#### Ejecuta el ejemplo
 
-##### Download the repo as a zip file and unzip it, or clone the repo:
+*Desde el directorio examples/helloworld:*
 
-    $ git clone -b v1.35.0 https://github.com/grpc/grpc-go
+*Compile y ejecute el código del servidor:*
 
-##### Change to the quick start example directory:
+```
+go run greeter_server/main.go
+```
 
-    $ cd grpc-go/examples/helloworld
+*Desde una terminal diferente, compile y 
+ejecute el código del cliente para ver 
+la salida del cliente:*
 
-#### Run the example
+```
+go run greeter_client/main.go
+```
 
-From the examples/helloworld directory:
+*Si todo trabaja bien, debes de recivir este mensaje:*
 
-Compile and execute the server code:
-
-    $ go run greeter_server/main.go
-
-From a different terminal, compile and execute the client code to see the client output:
-
-    $ go run greeter_client/main.go
+```
         Greeting: Hello world
+```
 
-Congratulations! You’ve just run a client-server application with gRPC.
+¡Felicidades! Acaba de ejecutar una aplicación cliente-servidor con gRPC.
 
 
