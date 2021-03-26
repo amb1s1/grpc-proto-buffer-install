@@ -14,7 +14,7 @@ sudo apt install git -y
 
 #### Ejecute las siguientes líneas 
 ```sh
-git clone https://github.com/amb1s1/grpc-proto-buffer-install.git ~/
+git clone https://github.com/amb1s1/grpc-proto-buffer-install.git ~/grpc-proto-buffer-install
 cd ~/grpc-proto-buffer-install
 ```
 
@@ -29,7 +29,7 @@ cd ~/grpc-proto-buffer-install
 export GOPATH=$HOME/gocode
 export PATH=/usr/local/go/bin:$HOME/grpc/bins/opt/:$HOME/bin:/usr/local/bin:$GOPATH/bin:$PATH
 ```
-#### Ejecute las siguientes líneas 
+#### Ejecute las siguiente línea 
 ##### Installar grpc y protoc
 
 ```
@@ -43,7 +43,7 @@ export PATH=/usr/local/go/bin:$HOME/grpc/bins/opt/:$HOME/bin:/usr/local/bin:$GOP
 ##### Descargue el repositorio como un archivo zip y descomprímalo, o clone el repositorio:
 
 ```sh
-git clone -b v1.35.0 https://github.com/grpc/grpc-go ~/
+git clone -b v1.35.0 https://github.com/grpc/grpc-go ~/grpc-go
 ```
 
 ##### Cambiar al directorio de ejemplo de inicio rápido
